@@ -1,5 +1,9 @@
 <script>
 /* I think it's wrong if all this is in the enclosing component. */
+	export let userName;
+	export let jobTitle;
+	export let description;
+	export let userImageURL;
 </script>
 
 
@@ -35,6 +39,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+	padding-left: 1rem;
   }
 
   h1 {
@@ -57,19 +62,20 @@
   }
 </style>
 
+<div>Job Title: </div>		<input type="text" bind:value="{jobTitle}">
 
 <div class="contact-card">
   <header>
     <div class="thumb">
-      <img src="" alt="" />
+      <img src="{userImageURL}" alt=""/>
     </div>
     <div class="user-data">
-      <h1>User Name</h1>
-      <h2>Job Title</h2>
+      <h1>{userName}</h1>
+      <h2>{jobTitle}</h2>
     </div>
   </header>
   <div class="description">
-    <p>A short description</p>
+    <p>{description}</p>
   </div>
 </div>
 
