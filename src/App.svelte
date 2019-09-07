@@ -2,7 +2,10 @@
 	import CC from "./ContactCard.svelte";
 
 	let name = "ge";
-	let age = 30;
+	let title = "Technical Lead";
+	let desc = "Do the important work.";
+	let age = "";
+	let userImage = "";
 
 	$: upperCaseName=name.toUpperCase();
 	$: console.log(name);
@@ -46,5 +49,14 @@
 <p>This input field uses svelte keyword <em>bind</em>, which replaces the function needed in the first input field.  This is very clever.</p>
 <input type="text" bind:value="{name}">
 
+<h1>Fill in Current Contact Card Component</h1>
 
-<CC />
+<div>Name: </div>				<input type="text" bind:value="{name}">
+<div>Job Title: </div>		<input type="text" bind:value="{title}">
+<div>User Image URL: </div>	<input type="text" bind:value="{userImage}">
+<br />
+<div>Job Description: </div>
+<textarea rows="3" bind:value="{desc}"></textarea>
+
+<!-- This is one-way communication.  E.g., the value of CC:jobTitle does not affect APP:title -->
+<CC userName="{name}" jobTitle="{title}" description="{desc}" userImageURL="{userImage}"/>
