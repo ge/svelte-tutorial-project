@@ -67,7 +67,7 @@
 <div class="contact-card">
   <header>
     <div class="thumb">
-      <img src="{userImageURL}" alt=""/>
+      <img src="{userImageURL}" alt="{userName}"/>
     </div>
     <div class="user-data">
       <h1>{userName}</h1>
