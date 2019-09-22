@@ -16,3 +16,4 @@ These two examples do the same thing:
 
 But I don't like the second syntax very much.  Notice the colon in the second example: that's a *svelte* command.
 
+The official version can be downloaded from [here](https://www.udemy.com/sveltejs-the-complete-guide/learn/lecture/14689512#overview).

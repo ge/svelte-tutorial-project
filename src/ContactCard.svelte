@@ -1,19 +1,17 @@
 <script>
-/* I think it's wrong if all this is in the enclosing component. */
-	export let userName;
-	export let jobTitle;
-	export let description;
-	export let userImageURL;
+  export let userName;
+  export let jobTitle;
+  export let description;
+  export let userImage;
 </script>
 
-
 <style>
-
   .contact-card {
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
     max-width: 30rem;
     border-radius: 5px;
     margin: 1rem 0;
+    background: white;
   }
 
   header {
@@ -29,7 +27,7 @@
   }
 
   .thumb-placeholder {
-	background: #ccc;
+    background: #ccc;
   }
 
   img {
@@ -43,7 +41,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-	padding-left: 1rem;
+    padding-left: 1rem;
   }
 
   h1 {
@@ -66,12 +64,10 @@
   }
 </style>
 
-<div>Job Title: </div>		<input type="text" bind:value="{jobTitle}">
-
 <div class="contact-card">
   <header>
-    <div class="{userImageURL ? 'thumb' : 'thumb thumb-placeholder'}">
-      <img src="{userImageURL}" alt="{userName}"/>
+    <div class="thumb" class:thumb-placeholder="{!userImage}">
+      <img src={userImage} alt={userName} />
     </div>
     <div class="user-data">
       <h1>{userName}</h1>
@@ -82,4 +78,3 @@
     <p>{description}</p>
   </div>
 </div>
-
