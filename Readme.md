@@ -32,6 +32,7 @@ downloads a library, node_modules, and a lock file on the *package.json* file te
     src/
 
 
+
 ## I restructured example 2.16
 
 At around 2.16, I decided to have *App.svelte* input the data for *ContactCard.svelte*, but I had *ContactCard.svelte* display the results.  The tutorial displays the data in *App.svelte.*  I'm trying to find a pattern that seems to encapsulate data and  data displays in components.  Even letting *App.svelte* input data strikes me as somehow wrong, but I wanted to see how it works.
@@ -96,3 +97,18 @@ This is worth rewatching when I have a form.
 
 Max recommends having buttons call functions, and I agree, but they can be created inline.
 
+# §5 The Project
+
+## §5.41 Getting Components to Communicate
+
+This is a *very* important lesson that goes a but fast for me to follow.  He seems to use a *svelte target:* command to embed components into the App component in such a way that they can communicate.
+
+I realize that we've used the *target:* command since the beginning in *main.js*:
+
+    import App from './App.svelte';
+
+    const app = new App({
+        target: document.body
+    });
+
+    export default app;
